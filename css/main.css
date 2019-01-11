@@ -1,0 +1,10 @@
+body{
+    background: #999;
+}
+
+header nav ul 
+{
+    background: #000;
+    color: #ffffff;
+    display: inline-block;
+}
