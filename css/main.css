@@ -14,12 +14,14 @@ header
 header h1 {
     margin: 0;
     display: inline;
+    padding: 10px;
 }
 
 nav ul
 {
-    margin: 0;
     display: inline;
+    margin: 0 50 0 0;
+    float: right;
 }
 
 h2{
@@ -30,13 +32,34 @@ p{
     color: #666;
 }
 nav ul li 
-{    color: #ffffff;
-    display: inline-block;
+{   display: inline-block;
     list-style-type: none;
-    padding: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #ffffff;
+    
 }
 
 nav ul li a
 {
-    color: #ffffff;
+    color: #a0a0a0;
+}
+
+.row
+{
+}
+
+.col
+{   
+    background: #fff;
+    color: #000;
+    padding: 0 10px;
+    width: 27%;
+    border-radius: 5px;
+    margin: 2% ;
+    float: left;
+}     
+footer
+{
+    clear: both;
 }
