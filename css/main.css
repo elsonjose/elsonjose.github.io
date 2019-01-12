@@ -1,10 +1,42 @@
 body{
-    background: #999;
+    font-family:Helvetica;
+    background: #cdcdcd;
+    margin: 0;
 }
 
-header nav ul 
+header
 {
-    background: #000;
-    color: #ffffff;
+    background: #999;
+    color: #fff;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    display: inline;
+}
+
+nav ul
+{
+    margin: 0;
+    display: inline;
+}
+
+h2{
+    color: #fff;
+}
+
+p{
+    color: #666;
+}
+nav ul li 
+{    color: #ffffff;
     display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+}
+
+nav ul li a
+{
+    color: #ffffff;
 }
