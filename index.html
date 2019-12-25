@@ -34,6 +34,9 @@
 			string3 = "user@EVE $: ";
 			function showCmdPropmt()
 			{
+				document.getElementById("cmd_cursor_id").style.display = "inline-block";
+
+
 				if(l<string3.length)
 				{
 					document.getElementById("cmd-first").innerHTML += string3.charAt(l);
@@ -87,7 +90,7 @@
 
 				}
 			}
-
+			document.getElementById("cmd_cursor_id").style.display = "none";
 			displayLoaderFirst();
 			
 			var i=0;
