@@ -1,49 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Kiduloski</title>
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>EJ</title>
+		<style>
+			body
+			{
+				background: #000000;
+				color: white;
+				font-family: Courier,Arial, Helvetica, sans-serif;
+				font-size: 2vw;
+			}
+			@media screen and (min-width: 600px){
+				body
+				{
+					font-size: 1vw;
+				}
+			}
+
+			.container 
+			{
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container p
+			{
+				font-size: 3rem;
+				font-weight: bold;
+				letter-spacing: 0.1rem;
+				text-align: center;
+			}
+
+			.typed-text
+			{
+				font-weight: normal;
+				color: #00ff00;
+			}
+
+			.cursor
+			{
+				display: inline-block;
+				width: 3px;
+				background-color: white;
+				margin-left: 0.1rem;
+				animation: blink 1s infinite;
+			}
+
+			@keyframes blink {
+				0% {background-color: white;} 
+				49% {background-color: white;} 
+				50% {background-color: transparent;}
+				99% {background-color: transparent;}
+				100% {background-color: white;} 
+			}
+
+		</style>
+
+	</head>
 	
-	<header class="navs">
-		<nav class="nav_pages">
-			<ul class="ul_pages">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="../pages/about.html">About</a></li>
-				<li><a href="../pages/contact.html">Contact</a></li>
-			</ul>
+	<body>
+		
+		<div class="container">
+			<p>
+				Loading 
+				<span class="typed-text">EJVE</span><span class="cursor">&nbsp;</span>
+			</p>
+		</div>
 
-			<ul class="ul_auth">
-					<li><a href="">SignIn</a></li>
-					<li><a href="">SignUp</a></li>
-			</ul>		
-		</nav>
-
-		<h1>
-				<center>
-						<strong>Kiduloski</strong>
-				</center>
-		</h1>
-	</header>
-
-	
-	<h2
-		<p>
-			<center>
-					This is my first webpage hosted on github. This is some dummy comment im going to write on the page.
-			</center>
-		</p>
-	</h2>
-
-	<center>
-			<button>
-					Click here to know more
-			</button>
-	</center>
-
-</body>
+		<script type="text/javascript">
+			var i=0,text;
+			text = "Welcome to EJ Virtual Enviornment. How may I help you ?"
+			function displayText()
+			{
+				if(i<text.length())
+				{
+					document.getElementsByClassName("container").innerHTML += text.charAt(i);
+					i++;
+					setTimeout(displayText,50);
+				}
+			}
+			displayText();
+		</script>
+	</body>
 </html>
