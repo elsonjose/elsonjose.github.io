@@ -27,6 +27,8 @@
 				font-weight: bold;
 				letter-spacing: 0.1rem;
 				text-align: center;
+				overflow: hidden;
+				padding: 0.5rem;
 			}
 
 			.typed-text
@@ -52,32 +54,49 @@
 				100% {background-color: white;} 
 			}
 
+			.text
+			{
+				color: white;
+			}
+
 		</style>
 
 	</head>
 	
 	<body>
 		
-		<div class="container">
+		<div class="container" id="loader">
 			<p>
-				Loading 
-				<span class="typed-text">EVE</span><span class="cursor">&nbsp;</span>
+				Loading <span class="typed-text">EVE</span><span class="cursor">&nbsp;</span>
 			</p>
 		</div>
 
+		<div id="text">
+		</div>
+		
 		<script type="text/javascript">
+			
 			var i=0,text;
-			text = "Welcome to EJ Virtual Enviornment. How may I help you ?"
+			string = "Welcome to Elson's Virtual Enviornment. How may I help you ?"
 			function displayText()
 			{
-				if(i<text.length())
+				if(i<string.length)
 				{
-					document.getElementsByClassName("container").innerHTML += text.charAt(i);
+					document.getElementById("text").innerHTML += string.charAt(i);
 					i++;
-					setTimeout(displayText,50);
+					setTimeout(displayText,30);
 				}
+
 			}
-			displayText();
+
+			function hideLoadingScreen()
+			{
+				document.getElementById('loader').style.display='none';
+			};
+			
+			setTimeout(function() {hideLoadingScreen(),displayText();}, 1500);
+
 		</script>
+
 	</body>
 </html>
