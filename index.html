@@ -33,11 +33,11 @@
 
 			.typed-text
 			{
-				font-weight: normal;
+				font-weight: bold;
 				color: #00ff00;
 			}
 
-			.cursor
+			.loader-cursor
 			{
 				display: inline-block;
 				width: 3px;
@@ -59,6 +59,14 @@
 				color: white;
 			}
 
+			.text-cursor
+			{
+				display: inline-block;
+				width: 3px;
+				background-color: white;
+				animation: blink 1s infinite;
+			}
+
 		</style>
 
 	</head>
@@ -67,17 +75,66 @@
 		
 		<div class="container" id="loader">
 			<p>
-				Loading <span class="typed-text">EVE</span><span class="cursor">&nbsp;</span>
+				<span id="loader-first"></span> <span class="typed-text" id="loader-second"></span><span class="loader-cursor" id="cursor_id">&nbsp;</span>
 			</p>
 		</div>
 
-		<div id="text">
+		<div class="wrapper-text" id="text">
+			<p>
+				<span id="text-first"></span><span class="text-cursor" id="text_cursor_id">&nbsp;</span>
+			</p>
 		</div>
+		
+
+
 		
 		<script type="text/javascript">
 			
-			var i=0,text;
-			string = "Welcome to Elson's Virtual Enviornment. How may I help you ?"
+
+			function hideLoadingScreen()
+			{
+				document.getElementById("loader").style.display = "none";
+				setTimeout(displayText, 100);
+				
+			}
+
+			var k=0;
+			string2 ="EVE"
+			function displayLoaderSecond()
+			{
+				if(k<string2.length)
+				{
+					document.getElementById("loader-second").innerHTML += string2.charAt(k);
+					k++;
+					setTimeout(displayLoaderSecond,30);
+				}
+				else
+				{
+					setTimeout(hideLoadingScreen,1000);
+				}
+			}
+
+			var j=0;
+			string1 ="Loading"
+			function displayLoaderFirst()
+			{
+				if(j<string1.length)
+				{
+					document.getElementById("loader-first").innerHTML += string1.charAt(j);
+					j++;
+					setTimeout(displayLoaderFirst,30);
+				}
+				else
+				{
+					displayLoaderSecond();
+
+				}
+			}
+
+			displayLoaderFirst();
+			
+			var i=0;
+			string = "Hai I'm EVE, Elson's Virtual Environment. How may I help you ? If you are new type 'help' to get started."
 			function displayText()
 			{
 				if(i<string.length)
@@ -88,14 +145,6 @@
 				}
 
 			}
-
-			function hideLoadingScreen()
-			{
-				document.getElementById('loader').style.display='none';
-			};
-			
-			setTimeout(function() {hideLoadingScreen(),displayText();}, 1500);
-
 		</script>
 
 	</body>
