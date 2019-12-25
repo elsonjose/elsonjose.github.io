@@ -23,11 +23,30 @@
 			</p>
 		</div>
 		
-
+		<div class="cmd" id="cmd-id">
+			<span id="cmd-first"></span><span class="cmd-cursor" id="cmd_cursor_id">&nbsp;</span>
+		</div>
 
 		
 		<script type="text/javascript">
 			
+			var l=0;
+			string3 = "user@EVE $: ";
+			function showCmdPropmt()
+			{
+				if(l<string3.length)
+				{
+					document.getElementById("cmd-first").innerHTML += string3.charAt(l);
+					l++;
+					setTimeout(showCmdPropmt,50);
+				}
+			}
+
+			function hideDisplayTextCursor()
+			{
+				document.getElementById("text_cursor_id").style.display = "none";
+				setTimeout(showCmdPropmt,100);
+			}
 
 			function hideLoadingScreen()
 			{
@@ -44,7 +63,7 @@
 				{
 					document.getElementById("loader-second").innerHTML += string2.charAt(k);
 					k++;
-					setTimeout(displayLoaderSecond,30);
+					setTimeout(displayLoaderSecond,50);
 				}
 				else
 				{
@@ -60,7 +79,7 @@
 				{
 					document.getElementById("loader-first").innerHTML += string1.charAt(j);
 					j++;
-					setTimeout(displayLoaderFirst,30);
+					setTimeout(displayLoaderFirst,50);
 				}
 				else
 				{
@@ -77,9 +96,13 @@
 			{
 				if(i<string.length)
 				{
-					document.getElementById("text").innerHTML += string.charAt(i);
+					document.getElementById("text-first").innerHTML += string.charAt(i);
 					i++;
 					setTimeout(displayText,30);
+				}
+				else
+				{
+					setTimeout(hideDisplayTextCursor, 500);		
 				}
 
 			}

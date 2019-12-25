@@ -1,60 +1,73 @@
 body
-			{
-				background: #000000;
-				color: white;
-				font-family: Courier,Arial, Helvetica, sans-serif;
-			}
+{
+	background: #000000;
+	color: white;
+	font-family: Courier,Arial, Helvetica, sans-serif;
+}
 
-			.container 
-			{
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
+.container 
+{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-			.container p
-			{
-				font-size: 3rem;
-				font-weight: bold;
-				letter-spacing: 0.1rem;
-				text-align: center;
-				overflow: hidden;
-				padding: 0.5rem;
-			}
+.container p
+{
+	font-size: 3rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	text-align: center;
+	overflow: hidden;
+	padding: 0.5rem;
+}
 
-			.typed-text
-			{
-				font-weight: bold;
-				color: #00ff00;
-			}
+.typed-text
+{
+	font-weight: bold;
+	color: #00ff00;
+}
 
-			.loader-cursor
-			{
-				display: inline-block;
-				width: 3px;
-				background-color: white;
-				margin-left: 0.1rem;
-				animation: blink 1s infinite;
-			}
+.loader-cursor
+{
+	display: inline-block;
+	width: 3px;
+	background-color: white;
+	margin-left: 0.1rem;
+	animation: blink 1s infinite;
+}
 
-			@keyframes blink {
-				0% {background-color: white;} 
-				49% {background-color: white;} 
-				50% {background-color: transparent;}
-				99% {background-color: transparent;}
-				100% {background-color: white;} 
-			}
+@keyframes blink {
+	0% {background-color: white;} 
+	49% {background-color: white;} 
+	50% {background-color: transparent;}
+	99% {background-color: transparent;}
+	100% {background-color: white;} 
+}
 
-			.text
-			{
-				color: white;
-			}
+.text
+{
+	color: white;
+}
 
-			.text-cursor
-			{
-				display: inline-block;
-				width: 3px;
-				background-color: white;
-				animation: blink 1s infinite;
-			}
+.text-cursor
+{
+	display: inline-block;
+	width: 3px;
+	background-color: white;
+	animation: blink 1s infinite;
+}
+
+.cmd
+{
+	color: #00ff00;
+	letter-spacing: 0.1rem;
+}
+.cmd-cursor
+{
+	display: inline-block;
+	width: 3px;
+	background-color: white;
+	animation: blink 1s infinite;
+}
