@@ -59,7 +59,7 @@ body
 	animation: blink 1s infinite;
 }
 
-.cmd
+.cmd-class
 {
 	color: #00ff00;
 	letter-spacing: 0.1rem;
