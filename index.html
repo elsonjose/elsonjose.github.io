@@ -39,7 +39,7 @@
 			var listcmds = ["help : To display  all commands.","whoami : To display my details.","clear : To clear the screen.","repos : To show my repositories.","coms : To establish  communicational links."];
 			function showCmdList()
 			{
-
+				document.getElementById("cmdlist_cursor_id").style.display = "inline-block";
 				if(m<listcmds.length)
 				{
 					cmd = listcmds[m];
@@ -54,6 +54,7 @@
 				}
 				else
 				{
+					document.getElementById("cmdlist_id").innerHTML +="<br>";
 					setTimeout(showCmdPropmt,100);
 					
 				}
@@ -64,6 +65,7 @@
 			string3 = "user@EVE $: ";
 			function showCmdPropmt()
 			{
+				document.getElementById("cmdlist_cursor_id").style.display = "none";
 				document.getElementById("cmd_cursor_id").style.display = "inline-block";
 
 
@@ -126,6 +128,7 @@
 				}
 			}
 			document.getElementById("cmd_cursor_id").style.display = "none";
+			document.getElementById("cmdlist_cursor_id").style.display = "none";
 			displayLoaderFirst();
 			
 			var i=0;

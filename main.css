@@ -57,6 +57,17 @@ body
 	background-color: white;
 }
 
+.list-cmd-span
+{
+	color: white;
+}
+.list-cmd-cursor
+{
+	display: inline-block;
+	width: 3px;
+	background-color: white;
+}
+
 .cmd-class
 {
 	color: #00ff00;
