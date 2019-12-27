@@ -43,6 +43,10 @@
 					l++;
 					setTimeout(showCmdPropmt,50);
 				}
+				else
+				{
+					document.getElementById("cmd_cursor_id").style.animation = "blink 1s infinite";
+				}
 			}
 
 			function hideDisplayTextCursor()
@@ -70,6 +74,7 @@
 				}
 				else
 				{
+					document.getElementById("cursor_id").style.animation = "blink 1s infinite";
 					setTimeout(hideLoadingScreen,1000);
 				}
 			}
@@ -94,7 +99,7 @@
 			displayLoaderFirst();
 			
 			var i=0;
-			string = "Hai I'm EVE, Elson's Virtual Environment. How may I help you ? If you are new type 'help' to get started."
+			string = "Hai I'm EVE, Elson's Virtual Environment. How may I help you ? If you are new to EVE type 'help' to get started."
 			function displayText()
 			{
 				if(i<string.length)

@@ -35,7 +35,6 @@ body
 	width: 3px;
 	background-color: white;
 	margin-left: 0.1rem;
-	animation: blink 1s infinite;
 }
 
 @keyframes blink {
@@ -56,7 +55,6 @@ body
 	display: inline-block;
 	width: 3px;
 	background-color: white;
-	animation: blink 1s infinite;
 }
 
 .cmd-class
@@ -69,5 +67,4 @@ body
 	display: inline-block;
 	width: 3px;
 	background-color: white;
-	animation: blink 1s infinite;
 }
