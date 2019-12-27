@@ -23,6 +23,10 @@
 			</p>
 		</div>
 		
+		<div class="list-cmd" id="cmdlist">
+			<span class="list-cmd-span" id="cmdlist_id"></span><span class="list-cmd-cursor" id="cmdlist_cursor_id">&nbsp;</span>
+		</div>
+
 		<div class="cmd" id="cmd-id">
 			<span class="cmd-class" id="cmd-first"></span><span class="cmd-cursor" id="cmd_cursor_id">&nbsp;</span>
 		</div>
@@ -30,6 +34,32 @@
 		
 		<script type="text/javascript">
 			
+			var cmd;
+			var m=0;
+			var listcmds = ["help : To display  all commands.","whoami : To display my details.","clear : To clear the screen.","repos : To show my repositories.","coms : To establish  communicational links."];
+			function showCmdList()
+			{
+
+				if(m<listcmds.length)
+				{
+					cmd = listcmds[m];
+					for(var i=0;i<cmd.length;i++)
+					{
+						document.getElementById("cmdlist_id").innerHTML += cmd.charAt(i);
+						setTimeout(function(){},50);
+					}
+					document.getElementById("cmdlist_id").innerHTML +="<br>";
+					m++;
+					setTimeout(showCmdList,500);
+				}
+				else
+				{
+					setTimeout(showCmdPropmt,100);
+					
+				}
+			
+			}
+
 			var l=0;
 			string3 = "user@EVE $: ";
 			function showCmdPropmt()
@@ -52,7 +82,7 @@
 			function hideDisplayTextCursor()
 			{
 				document.getElementById("text_cursor_id").style.display = "none";
-				setTimeout(showCmdPropmt,100);
+				setTimeout(showCmdList,50);
 			}
 
 			function hideLoadingScreen()
@@ -99,7 +129,7 @@
 			displayLoaderFirst();
 			
 			var i=0;
-			string = "Hai I'm EVE, Elson's Virtual Environment. How may I help you ? If you are new to EVE type 'help' to get started."
+			string = "Hai I'm EVE, Elson's Virtual Environment. Let's help you to get started."
 			function displayText()
 			{
 				if(i<string.length)
