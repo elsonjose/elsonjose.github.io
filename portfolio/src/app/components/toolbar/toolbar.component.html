@@ -1,0 +1,9 @@
+<div class="toolbar-wrapper">
+  <ul class="toolbar-list">
+    <li *ngFor="let item of toolbarMenuList">
+      <a href="{{ item.url }}">
+        {{ item.label | uppercase }}
+      </a>
+    </li>
+  </ul>
+</div>

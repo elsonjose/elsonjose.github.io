@@ -1,0 +1,13 @@
+.app-body {
+  width: 100%;
+  max-width: 1980px;
+  background-color: #fffff0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .content {
+    width: 80%;
+    background-color: #D9D9D9;
+    padding: 2rem 0;
+  }
+}

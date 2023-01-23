@@ -1,0 +1,17 @@
+.toolbar-list {
+  list-style-type: none;
+  text-align: end;
+  padding: 0 2rem;
+  li {
+    flex-grow: 1;
+    display: inline;
+    margin-right: 2rem;
+    padding: 1rem;
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+}
