@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ToolbarAction } from 'src/app/helpers/constant';
+import { Component, Input } from '@angular/core';
 import { ToolbarMenuModel } from 'src/app/models/toolbar-menu-model';
 
 @Component({
@@ -11,9 +10,6 @@ export class ToolbarComponent {
 
   // The toolbar menu data
   @Input() toolbarMenuList: ToolbarMenuModel[] = [];
-
-  // The event emitter for toolbar actions
-  @Output() toolbarActionEmitter = new EventEmitter<ToolbarAction>();
 
   constructor() {}
 }

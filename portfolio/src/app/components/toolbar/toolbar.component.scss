@@ -1,17 +1,31 @@
 .toolbar-list {
   list-style-type: none;
   text-align: end;
-  padding: 0 2rem;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
   li {
     flex-grow: 1;
     display: inline;
-    margin-right: 2rem;
-    padding: 1rem;
     a {
       text-decoration: none;
       color: black;
       font-size: 1rem;
       font-weight: 500;
+      letter-spacing: 0.6px;
     }
+  }
+
+  li:nth-child(1) {
+    margin-right: 2rem;
+    padding: 1rem;
+  }
+
+  li:nth-child(2) {
+    padding: 1rem 0 1rem 1rem;
   }
 }
