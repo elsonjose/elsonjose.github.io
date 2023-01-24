@@ -4,6 +4,7 @@ export interface ContentBlock {
   title: string;
   messages:string[]
   blocks: ContentBlockData[];
+  type: ContentBlockType;
 }
 
 export interface ContentBlockData {
@@ -11,5 +12,5 @@ export interface ContentBlockData {
   url: string;
   description: string;
   icon: string;
-  type: ContentBlockType;
+  actionText:string;
 }

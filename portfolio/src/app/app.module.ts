@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { ContentBlockComponent } from './components/content-block/content-block.component';
 @NgModule({
   declarations: [AppComponent, ToolbarComponent, HeaderComponent, ContentBlockComponent],
@@ -16,6 +17,7 @@ import { ContentBlockComponent } from './components/content-block/content-block.
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

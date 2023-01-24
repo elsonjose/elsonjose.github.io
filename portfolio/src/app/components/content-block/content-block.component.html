@@ -1,26 +1,43 @@
 <div class="content-block-wrapper">
-  <h1>
+  <h1 class="content-title">
     {{ contentData.title }}
   </h1>
-  <p *ngFor="let message of contentData.messages">
+  <p *ngFor="let message of contentData.messages" class="content-description">
     {{ message }}
   </p>
 
-  <ng-template #card let-block="block"> </ng-template>
+  <ng-template #card let-block="block">
+    <div class="card">
+      <h4 class="card-title">
+        {{ block.title }}
+      </h4>
+      <p class="card-desc">
+        {{ block.description }}
+      </p>
+      <button mat-raised-button class="card-button">
+        {{ block.actionText }}
+      </button>
+    </div>
+  </ng-template>
 
   <ng-template #chip let-block="block">
     <div class="chip">
       <img src="{{ block.icon }}" alt="chip image" class="chip-icon" />
-      <p class="chip-text">
+      <p class="chip-title">
         {{ block.title }}
       </p>
     </div>
   </ng-template>
 
-  <div class="block-wrapper">
+  <div
+    [ngClass]="{
+      'block-wrapper-grid': contentData.type == blockType.CARD,
+      'block-wrapper-flex': contentData.type == blockType.CHIP
+    }"
+  >
     <ng-container
       *ngFor="let block of contentData.blocks"
-      [ngTemplateOutlet]="block.type == blockType.CARD ? card : chip"
+      [ngTemplateOutlet]="contentData.type == blockType.CARD ? card : chip"
       [ngTemplateOutletContext]="{ block: block }"
     >
     </ng-container>

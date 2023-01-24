@@ -1,4 +1,5 @@
 export enum Literal{
-    PROJECT="project",
-    BLOG="blog"
+    PROJECT="projects",
+    BLOG="blog",
+    VIEW_IN_GITHUB="View in github"
 }

@@ -12,6 +12,7 @@ export class ContentBlockComponent {
   @Input() contentData: ContentBlock = {
     title: '',
     messages: [],
+    type: ContentBlockType.CARD,
     blocks: [],
   };
 

@@ -6,24 +6,32 @@
   margin-top: 4rem;
 
   h1,
+  h4,
   p {
     margin: 0;
     padding: 0;
   }
 
-  h1 {
+  .content-title {
     font-weight: 500;
     font-size: 3rem;
     margin-bottom: 2rem;
   }
 
-  p {
-    font-size: 1.4rem;
+  .content-description {
+    font-size: 1.2rem;
     margin-bottom: 1.4rem;
     color: rgba($color: #000000, $alpha: 1);
   }
 
-  .block-wrapper {
+  .block-wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 182px);
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .block-wrapper-flex {
     display: flex;
     margin-top: 1rem;
   }
@@ -42,12 +50,39 @@
       width: 32px;
       height: 32px;
     }
-    .chip-text {
+    .chip-title {
       display: inline;
       margin: 0;
       padding: 0;
       margin-left: 0.4rem;
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 1rem;
+    padding: 0.4rem 1rem;
+    background: linear-gradient($site-background, $site-background) padding-box,
+      linear-gradient(to right, $gradient-start-color, $gradient-end-color)
+        border-box;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    .card-title {
+      font-size: 1.4rem;
+      padding: 0.8rem 0;
+    }
+    .card-desc {
       font-size: 1.2rem;
+    }
+
+    .card-button {
+      margin: 1rem auto;
+      color: white;
+      font-size: 1rem;
+      border-radius: 1rem;
+      background-color: $card-action-text-color;
     }
   }
 }
