@@ -1,0 +1,53 @@
+@import "../../variables.scss";
+
+.content-block-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 4rem;
+
+  h1,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+    color: rgba($color: #000000, $alpha: 1);
+  }
+
+  .block-wrapper {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .chip {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 2rem;
+    margin-right: 1rem;
+    background: linear-gradient($site-background, $site-background) padding-box,
+      linear-gradient(to right, $gradient-start-color, $gradient-end-color)
+        border-box;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    .chip-icon {
+      width: 32px;
+      height: 32px;
+    }
+    .chip-text {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      margin-left: 0.4rem;
+      font-size: 1.2rem;
+    }
+  }
+}

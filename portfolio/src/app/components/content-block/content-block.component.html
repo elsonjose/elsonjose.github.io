@@ -1,0 +1,28 @@
+<div class="content-block-wrapper">
+  <h1>
+    {{ contentData.title }}
+  </h1>
+  <p *ngFor="let message of contentData.messages">
+    {{ message }}
+  </p>
+
+  <ng-template #card let-block="block"> </ng-template>
+
+  <ng-template #chip let-block="block">
+    <div class="chip">
+      <img src="{{ block.icon }}" alt="chip image" class="chip-icon" />
+      <p class="chip-text">
+        {{ block.title }}
+      </p>
+    </div>
+  </ng-template>
+
+  <div class="block-wrapper">
+    <ng-container
+      *ngFor="let block of contentData.blocks"
+      [ngTemplateOutlet]="block.type == blockType.CARD ? card : chip"
+      [ngTemplateOutletContext]="{ block: block }"
+    >
+    </ng-container>
+  </div>
+</div>

@@ -8,8 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
+import { ContentBlockComponent } from './components/content-block/content-block.component';
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent, HeaderComponent],
+  declarations: [AppComponent, ToolbarComponent, HeaderComponent, ContentBlockComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
