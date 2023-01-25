@@ -2,9 +2,11 @@
   <h1 class="content-title">
     {{ contentData.title }}
   </h1>
-  <p *ngFor="let message of contentData.messages" class="content-description">
-    {{ message }}
-  </p>
+  <p
+    *ngFor="let message of contentData.messages"
+    class="content-description"
+    [innerHtml]="message"
+  ></p>
 
   <ng-template #card let-block="block">
     <div class="card">

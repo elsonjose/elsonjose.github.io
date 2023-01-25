@@ -4,6 +4,12 @@ export enum ToolbarAction {
 }
 
 export enum ContentBlockType {
-  CHIP = 1, 
+  CHIP = 1,
   CARD = 2,
+  NONE = 3,
+}
+
+export enum ContentMessageType {
+  TEXT = 1,
+  INNER_HTML = 2,
 }

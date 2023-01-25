@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { ContentBlockType, ToolbarAction } from './helpers/constant';
+import {
+  ContentBlockType,
+  ContentMessageType,
+  ToolbarAction,
+} from './helpers/constant';
 import { Literal } from './helpers/literals';
 import { ContentBlock } from './models/content-block';
 import { ToolbarMenuModel } from './models/toolbar-menu-model';
@@ -26,6 +30,7 @@ export class AppComponent {
 
   aboutMeContent: ContentBlock = {
     title: 'About Me',
+    messageType: ContentMessageType.TEXT,
     messages: [
       'A developer from India, keen to learn and work in diverse projects.',
       'I used to freelance during my college days as a mentor and developing projects which helped to cultivate crucial skills such as understanding the customer requirement, transforming a requirement to a solution and finally the fun part, the coding.',
@@ -51,9 +56,10 @@ export class AppComponent {
   };
   projectContent: ContentBlock = {
     title: 'Projects',
+    messageType: ContentMessageType.TEXT,
     type: ContentBlockType.CARD,
     messages: [
-      'I’m curious and often amazed my how tech works. I love automation (it saves a lot of of time if done correctly). In my leisure time you can find me trying to implement something  I learnt.',
+      'I’m curious and often amazed my how tech works. I love automation (it saves a lot of of time if done correctly). In my leisure time you can find me trying to implement something  I learnt. You can find all my projects at <a href="https://github.com/elsonjose">github<a>. Here are a few of them.',
     ],
     blocks: [
       {
@@ -113,5 +119,14 @@ export class AppComponent {
         actionText: Literal.VIEW_IN_GITHUB,
       },
     ],
+  };
+  blogContent: ContentBlock = {
+    title: 'Blog',
+    messageType: ContentMessageType.INNER_HTML,
+    type: ContentBlockType.NONE,
+    messages: [
+      'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a href="/codex">Codex</a> to learn about the quick fixes I have used while learning.',
+    ],
+    blocks: [],
   };
 }
