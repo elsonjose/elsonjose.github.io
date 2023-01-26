@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ToolbarMenuModel } from 'src/app/models/toolbar-menu-model';
+import { MenuActionModel } from 'src/app/models/menu-action-model';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +9,7 @@ import { ToolbarMenuModel } from 'src/app/models/toolbar-menu-model';
 export class ToolbarComponent {
 
   // The toolbar menu data
-  @Input() toolbarMenuList: ToolbarMenuModel[] = [];
+  @Input() toolbarMenuList: MenuActionModel[] = [];
 
   constructor() {}
 }

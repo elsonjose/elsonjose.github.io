@@ -10,8 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ContentBlockComponent } from './components/content-block/content-block.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent, HeaderComponent, ContentBlockComponent],
+  declarations: [AppComponent, ToolbarComponent, HeaderComponent, ContentBlockComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

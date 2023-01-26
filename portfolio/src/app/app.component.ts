@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import {
   ContentBlockType,
   ContentMessageType,
-  ToolbarAction,
+  MenuActionType,
+  MenuAction,
 } from './helpers/constant';
 import { Literal } from './helpers/literals';
 import { ContentBlock } from './models/content-block';
-import { ToolbarMenuModel } from './models/toolbar-menu-model';
+import { MenuActionModel } from './models/menu-action-model';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +16,18 @@ import { ToolbarMenuModel } from './models/toolbar-menu-model';
 })
 export class AppComponent {
   // The toolbar data to be passed onto the component
-  toolbarMenuList: ToolbarMenuModel[] = [
+  toolbarMenuList: MenuActionModel[] = [
     {
       label: Literal.PROJECT,
       url: '/projects',
-      action: ToolbarAction.PROJECT,
+      action: MenuAction.NONE,
+      actionType:MenuActionType.URL
     },
     {
       label: Literal.BLOG,
       url: '/blogs',
-      action: ToolbarAction.BLOG,
+      action: MenuAction.NONE,
+      actionType:MenuActionType.URL
     },
   ];
 
@@ -59,7 +62,7 @@ export class AppComponent {
     messageType: ContentMessageType.TEXT,
     type: ContentBlockType.CARD,
     messages: [
-      'I’m curious and often amazed my how tech works. I love automation (it saves a lot of of time if done correctly). In my leisure time you can find me trying to implement something  I learnt. You can find all my projects at <a href="https://github.com/elsonjose">github<a>. Here are a few of them.',
+      'I’m curious and often amazed my how tech works. I love automation (it saves a lot of of time if done correctly). In my leisure time you can find me trying to implement something  I learnt. You can find all my projects at <a class="url-text" href="https://github.com/elsonjose">github</a>. Here are a few of them.',
     ],
     blocks: [
       {
@@ -125,7 +128,7 @@ export class AppComponent {
     messageType: ContentMessageType.INNER_HTML,
     type: ContentBlockType.NONE,
     messages: [
-      'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a href="/codex">Codex</a> to learn about the quick fixes I have used while learning.',
+      'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a class="url-text" href="/codex">Codex</a> to learn about the quick fixes I have used while learning.',
     ],
     blocks: [],
   };
