@@ -17,6 +17,8 @@ export class ContentBlockComponent {
     blocks: [],
   };
 
+  
+
   blockType = ContentBlockType;
 
   constructor() {}

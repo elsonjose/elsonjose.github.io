@@ -1,9 +1,13 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ContentBlockType,
   ContentMessageType,
   MenuActionType,
   MenuAction,
+  BLOG_URL,
+  DrawerAction,
 } from './helpers/constant';
 import { Literal } from './helpers/literals';
 import { ContentBlock } from './models/content-block';
@@ -15,19 +19,24 @@ import { MenuActionModel } from './models/menu-action-model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  constructor(private scroller: ViewportScroller) {}
+
+  // Specifies whether the drawer is open or not
+  isDrawerOpen = false;
+
   // The toolbar data to be passed onto the component
   toolbarMenuList: MenuActionModel[] = [
     {
       label: Literal.PROJECT,
-      url: '/projects',
+      url: '#projects',
       action: MenuAction.NONE,
-      actionType:MenuActionType.URL
+      actionType: MenuActionType.URL,
     },
     {
       label: Literal.BLOG,
-      url: '/blogs',
+      url: BLOG_URL,
       action: MenuAction.NONE,
-      actionType:MenuActionType.URL
+      actionType: MenuActionType.URL,
     },
   ];
 
@@ -35,9 +44,7 @@ export class AppComponent {
     title: 'About Me',
     messageType: ContentMessageType.TEXT,
     messages: [
-      'A developer from India, keen to learn and work in diverse projects.',
-      'I used to freelance during my college days as a mentor and developing projects which helped to cultivate crucial skills such as understanding the customer requirement, transforming a requirement to a solution and finally the fun part, the coding.',
-      'I graduated with a Computer Science Degree in 2021. Currently I’m working for a software company in India as full-stack developer.',
+      'A developer from India, keen to learn and work in diverse projects. I used to freelance during my college days as a mentor and developing projects which helped to cultivate crucial skills such as understanding the customer requirement, transforming a requirement to a solution and finally the fun part, the coding. I graduated with a Computer Science Degree in 2021. Currently I’m working for a software company in India as full-stack developer.',
     ],
     type: ContentBlockType.CHIP,
     blocks: [
@@ -128,8 +135,49 @@ export class AppComponent {
     messageType: ContentMessageType.INNER_HTML,
     type: ContentBlockType.NONE,
     messages: [
-      'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a class="url-text" href="/codex">Codex</a> to learn about the quick fixes I have used while learning.',
+      'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a class="url-text" href="' +
+        BLOG_URL +
+        '">Codex</a> to learn about the quick fixes I have used while learning.',
     ],
     blocks: [],
   };
+
+  footerContent: MenuActionModel[] = [
+    {
+      label: Literal.ATTRIBUTIONS,
+      actionType: MenuActionType.ACTION,
+      url: '',
+      action: MenuAction.ATTRIBUTION,
+    },
+    {
+      label: Literal.CONTACT,
+      actionType: MenuActionType.URL,
+      url: 'header-contact',
+      action: MenuAction.NONE,
+    },
+    {
+      label: Literal.BACK_TO_TOP,
+      actionType: MenuActionType.URL,
+      url: 'top-view',
+      action: MenuAction.NONE,
+    },
+  ];
+
+  public onFooterEvent(menu: MenuActionModel) {
+    if (menu.actionType == MenuActionType.ACTION) {
+      this.onOpenDrawer(menu.action);
+    } else if (menu.actionType == MenuActionType.URL) {
+      console.log("actions");
+      
+      this.scroller.scrollToAnchor(menu.url);
+    }
+  }
+
+  onOpenDrawer(actionId: number) {
+    switch (actionId) {
+      case DrawerAction.ATTRIBUTION: {
+        this.isDrawerOpen = true;
+      }
+    }
+  }
 }

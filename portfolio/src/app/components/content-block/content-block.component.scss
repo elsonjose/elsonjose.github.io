@@ -14,12 +14,12 @@
 
   .content-title {
     font-weight: 500;
-    font-size: 3rem;
+    font-size: $content-title-font-size;
     margin-bottom: 2rem;
   }
 
   .content-description {
-    font-size: 1.2rem;
+    font-size: $content-text-high-font-size;
     margin-bottom: 1.4rem;
     color: rgba($color: #000000, $alpha: 1);
   }
@@ -37,6 +37,8 @@
   }
 
   .chip {
+    cursor: pointer;
+    transition: 0.2s;
     display: flex;
     align-items: center;
     padding: 0.4rem 2rem;
@@ -45,6 +47,7 @@
       linear-gradient(to right, $gradient-start-color, $gradient-end-color)
         border-box;
     border-radius: 1rem;
+    box-shadow: 6px 6px 10px -4px rgba($color: #000000, $alpha: 0.4);
     border: 2px solid transparent;
     .chip-icon {
       width: 32px;
@@ -55,8 +58,13 @@
       margin: 0;
       padding: 0;
       margin-left: 0.4rem;
-      font-size: 1rem;
+      font-size: $content-text-high-font-size;
     }
+  }
+
+  .chip:hover,
+  .card .card-button:hover {
+    transform: scale(1.05);
   }
 
   .card {
@@ -66,22 +74,25 @@
     background: linear-gradient($site-background, $site-background) padding-box,
       linear-gradient(to right, $gradient-start-color, $gradient-end-color)
         border-box;
+    box-shadow: 10px 10px 20px 0 rgba($color: #000000, $alpha: 0.4);
     border-radius: 1rem;
     border: 2px solid transparent;
     .card-title {
-      font-size: 1.4rem;
+      font-size: $content-sub-title-font-size;
       padding: 0.8rem 0;
     }
     .card-desc {
-      font-size: 1.2rem;
+      font-size: $content-text-high-font-size;
     }
 
     .card-button {
+      transition: 0.2s;
       margin: 1rem auto;
       color: white;
-      font-size: 1rem;
+      font-size: $content-text-font-size;
       border-radius: 1rem;
       background-color: $card-action-text-color;
+      cursor: pointer;
     }
   }
 }

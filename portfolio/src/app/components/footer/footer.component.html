@@ -1,1 +1,7 @@
-<p>footer works!</p>
+<div class="footer-wrapper">
+  <div class="footer-content-wrapper">
+    <div *ngFor="let menu of footerActions" (click)="onMenuItemClicked(menu)">
+      {{ menu.label }}
+    </div>
+  </div>
+</div>
