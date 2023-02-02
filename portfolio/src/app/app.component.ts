@@ -1,6 +1,5 @@
 import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   ContentBlockType,
   ContentMessageType,
@@ -54,6 +53,7 @@ export class AppComponent {
         description: 'Career path',
         icon: 'https://cdn-icons-png.flaticon.com/512/9217/9217013.png',
         actionText: '',
+        actionId: DrawerAction.ROAD_MAP,
       },
       {
         title: 'Achievements',
@@ -61,6 +61,7 @@ export class AppComponent {
         description: 'Rewards and Recognition',
         icon: 'https://cdn-icons-png.flaticon.com/512/1435/1435715.png',
         actionText: '',
+        actionId: DrawerAction.ACHIEVEMENTS,
       },
     ],
   };
@@ -79,6 +80,7 @@ export class AppComponent {
           'A logging platform for easy log management and debugging.',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -87,6 +89,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -95,6 +98,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -103,6 +107,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -111,6 +116,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -119,6 +125,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
       {
         title: 'SideHustle',
@@ -127,6 +134,7 @@ export class AppComponent {
           'Sell your side projects, mentor or learn how to create projects',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
+        actionId: DrawerAction.NONE,
       },
     ],
   };
@@ -167,16 +175,28 @@ export class AppComponent {
     if (menu.actionType == MenuActionType.ACTION) {
       this.onOpenDrawer(menu.action);
     } else if (menu.actionType == MenuActionType.URL) {
-      console.log("actions");
-      
+      console.log('actions ' + menu.url);
       this.scroller.scrollToAnchor(menu.url);
     }
+  }
+
+  public onContentEvent(actionId: DrawerAction) {
+    this.onOpenDrawer(actionId);
   }
 
   onOpenDrawer(actionId: number) {
     switch (actionId) {
       case DrawerAction.ATTRIBUTION: {
         this.isDrawerOpen = true;
+        break;
+      }
+      case DrawerAction.ROAD_MAP: {
+        this.isDrawerOpen = true;
+        break;
+      }
+      case DrawerAction.ACHIEVEMENTS: {
+        this.isDrawerOpen = true;
+        break;
       }
     }
   }

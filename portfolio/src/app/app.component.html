@@ -1,17 +1,26 @@
 <mat-drawer-container>
-  <mat-drawer [mode]="'over'" [opened]="isDrawerOpen" position="end">asdasd
+  <mat-drawer
+    #drawer
+    [mode]="'over'"
+    [opened]="isDrawerOpen"
+    position="end"
+    (openedChange)="isDrawerOpen = $event"
+    >Sample Drawer
   </mat-drawer>
   <mat-drawer-content id="top-view" class="app-body">
     <div class="content">
       <app-toolbar [toolbarMenuList]="toolbarMenuList"></app-toolbar>
       <app-header></app-header>
-      <app-content-block [contentData]="aboutMeContent"></app-content-block>
+      <app-content-block [contentData]="aboutMeContent" (contentEventEmitter)="onContentEvent($event)"></app-content-block>
       <app-content-block
         id="projects"
         [contentData]="projectContent"
       ></app-content-block>
       <app-content-block [contentData]="blogContent"></app-content-block>
     </div>
-    <app-footer [footerActions]="footerContent" (footerEventEmitter)="onFooterEvent($event)"></app-footer>
+    <app-footer
+      [footerActions]="footerContent"
+      (footerEventEmitter)="onFooterEvent($event)"
+    ></app-footer>
   </mat-drawer-content>
 </mat-drawer-container>

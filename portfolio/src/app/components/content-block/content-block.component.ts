@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContentBlockType, ContentMessageType } from 'src/app/helpers/constant';
 import { ContentBlock } from 'src/app/models/content-block';
 
@@ -17,9 +17,12 @@ export class ContentBlockComponent {
     blocks: [],
   };
 
-  
+  // The event emitter for content actions
+  @Output() contentEventEmitter = new EventEmitter<number>();
 
   blockType = ContentBlockType;
 
-  constructor() {}
+  onContentAction(id: number) {
+    this.contentEventEmitter.emit(id);
+  }
 }

@@ -26,6 +26,7 @@ export enum DrawerAction {
   ATTRIBUTION = 1,
   ROAD_MAP = 2,
   ACHIEVEMENTS = 3,
+  NONE = 4,
 }
 
 export const BLOG_URL = 'https://www.google.com';

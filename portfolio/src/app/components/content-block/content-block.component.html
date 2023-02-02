@@ -23,7 +23,7 @@
   </ng-template>
 
   <ng-template #chip let-block="block">
-    <div class="chip">
+    <div class="chip" (click)="onContentAction(block.actionId)">
       <img src="{{ block.icon }}" alt="chip image" class="chip-icon" />
       <p class="chip-title">
         {{ block.title }}

@@ -1,4 +1,8 @@
-import { ContentBlockType, ContentMessageType } from '../helpers/constant';
+import {
+  ContentBlockType,
+  ContentMessageType,
+  DrawerAction,
+} from '../helpers/constant';
 
 export interface ContentBlock {
   title: string;
@@ -14,4 +18,5 @@ export interface ContentBlockData {
   description: string;
   icon: string;
   actionText: string;
+  actionId: DrawerAction;
 }
