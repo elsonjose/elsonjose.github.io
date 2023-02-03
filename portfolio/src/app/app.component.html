@@ -7,9 +7,9 @@
     (openedChange)="isDrawerOpen = $event"
     >Sample Drawer
   </mat-drawer>
-  <mat-drawer-content id="top-view" class="app-body">
-    <div class="content">
-      <app-toolbar [toolbarMenuList]="toolbarMenuList"></app-toolbar>
+  <mat-drawer-content class="app-body">
+    <div class="content" id="top-view">
+      <app-toolbar [toolbarMenuList]="toolbarMenuList" (toolbarEmitter)="onToolbarEvent($event)"></app-toolbar>
       <app-header></app-header>
       <app-content-block [contentData]="aboutMeContent" (contentEventEmitter)="onContentEvent($event)"></app-content-block>
       <app-content-block

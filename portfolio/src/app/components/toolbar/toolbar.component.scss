@@ -13,7 +13,9 @@
   li {
     flex-grow: 1;
     display: inline;
-    a {
+    div {
+      cursor: pointer;
+      display: inline;
       text-decoration: none;
       color: black;
       font-size: $content-text-font-size;

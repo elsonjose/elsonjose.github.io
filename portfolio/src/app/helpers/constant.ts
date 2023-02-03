@@ -19,6 +19,7 @@ export enum ContentMessageType {
 export enum MenuActionType {
   URL = 1,
   ACTION = 2,
+  ID = 3
 }
 
 // Depends on MenuAction

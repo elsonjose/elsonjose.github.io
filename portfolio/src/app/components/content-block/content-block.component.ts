@@ -25,4 +25,9 @@ export class ContentBlockComponent {
   onContentAction(id: number) {
     this.contentEventEmitter.emit(id);
   }
+
+  openUrl(url:string)
+  {
+    window.open(url,"_blank")
+  }
 }

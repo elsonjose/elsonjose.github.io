@@ -27,9 +27,9 @@ export class AppComponent {
   toolbarMenuList: MenuActionModel[] = [
     {
       label: Literal.PROJECT,
-      url: '#projects',
+      url: 'projects',
       action: MenuAction.NONE,
-      actionType: MenuActionType.URL,
+      actionType: MenuActionType.ID,
     },
     {
       label: Literal.BLOG,
@@ -145,7 +145,7 @@ export class AppComponent {
     messages: [
       'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a class="url-text" href="' +
         BLOG_URL +
-        '">Codex</a> to learn about the quick fixes I have used while learning.',
+        '" target="_blank">Codex</a> to learn about the quick fixes I have used while learning.',
     ],
     blocks: [],
   };
@@ -171,12 +171,31 @@ export class AppComponent {
     },
   ];
 
+  onSmoothScroll(id: string) {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  }
+
+  onToolbarEvent(menu: MenuActionModel) {
+    console.log(menu);
+    
+    if (menu.actionType == MenuActionType.ID) {
+      switch (menu.label) {
+        case Literal.PROJECT:
+          this.onSmoothScroll(menu.url);
+          break;
+      }
+    }
+  }
+
   public onFooterEvent(menu: MenuActionModel) {
     if (menu.actionType == MenuActionType.ACTION) {
       this.onOpenDrawer(menu.action);
     } else if (menu.actionType == MenuActionType.URL) {
-      console.log('actions ' + menu.url);
-      this.scroller.scrollToAnchor(menu.url);
+      this.onSmoothScroll(menu.url);
     }
   }
 

@@ -16,7 +16,7 @@
       <p class="card-desc">
         {{ block.description }}
       </p>
-      <button mat-raised-button class="card-button">
+      <button mat-raised-button class="card-button" (click)="openUrl(block.url)">
         {{ block.actionText }}
       </button>
     </div>
