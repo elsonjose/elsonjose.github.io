@@ -19,7 +19,7 @@ export enum ContentMessageType {
 export enum MenuActionType {
   URL = 1,
   ACTION = 2,
-  ID = 3
+  ID = 3,
 }
 
 // Depends on MenuAction
@@ -28,6 +28,13 @@ export enum DrawerAction {
   ROAD_MAP = 2,
   ACHIEVEMENTS = 3,
   NONE = 4,
+}
+
+export enum ContactType {
+  STACKOVERFLOW = 1,
+  GITHUB = 2,
+  LINKEDIN = 3,
+  MAIL = 4,
 }
 
 export const BLOG_URL = 'https://www.google.com';
