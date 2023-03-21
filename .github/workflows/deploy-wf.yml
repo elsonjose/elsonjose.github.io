@@ -43,4 +43,4 @@ jobs:
           source-directory: 'dist/portfolio'
           destination-github-username: 'elsonjose'
           destination-repository-name: ''
-          user-email: {{secrets.EMAIL}}
+          user-email: ${{ secrets.EMAIL }}
