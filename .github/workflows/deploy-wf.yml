@@ -36,10 +36,9 @@ jobs:
         working-directory: ./portfolio
       - name: Deploy code
         uses: cpina/github-action-push-to-another-repository@master
-        working-directory: ./portfolio
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'dist/portfolio'
+          source-directory: 'portfolio/dist/portfolio'
           destination-github-username: 'elsonjose'
           destination-repository-name: ''
