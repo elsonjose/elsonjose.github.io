@@ -74,28 +74,28 @@ export class AppComponent {
     ],
     blocks: [
       {
-        title: 'LogOps',
-        url: 'https://github.com/elsonjose/InstaSave',
+        title: 'Homestream',
+        url: 'https://github.com/elsonjose/homestream',
         description:
-          'A logging platform for easy log management and debugging.',
+          'A self hosted streaming site for your home.',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
         actionId: DrawerAction.NONE,
       },
       {
-        title: 'SideHustle',
-        url: 'https://github.com/elsonjose/InstaSave',
+        title: 'Crop',
+        url: 'https://github.com/elsonjose/crop',
         description:
-          'Sell your side projects, mentor or learn how to create projects',
+          'Character Recognition Of Plates using yolov5',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
         actionId: DrawerAction.NONE,
       },
       {
-        title: 'SideHustle',
-        url: 'https://github.com/elsonjose/InstaSave',
+        title: 'Codex',
+        url: 'https://github.com/elsonjose/DocHub',
         description:
-          'Sell your side projects, mentor or learn how to create projects',
+          'A sample blogging site',
         icon: '',
         actionText: Literal.VIEW_IN_GITHUB,
         actionId: DrawerAction.NONE,
@@ -145,7 +145,7 @@ export class AppComponent {
     messages: [
       'Learning never ends and what better way learn tech than by blogging. Hence I’m starting a blog to cultivate research and refine my knowledge. You can visit <a class="url-text" href="' +
         BLOG_URL +
-        '" target="_blank">Codex</a> to learn about the quick fixes I have used while learning.',
+        '" target="_blank">Dev Blog</a> to learn about the quick fixes I have used while learning.',
     ],
     blocks: [],
   };

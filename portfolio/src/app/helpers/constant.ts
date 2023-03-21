@@ -37,4 +37,4 @@ export enum ContactType {
   MAIL = 4,
 }
 
-export const BLOG_URL = 'https://www.google.com';
+export const BLOG_URL = 'https://dev.to/elsonjose';

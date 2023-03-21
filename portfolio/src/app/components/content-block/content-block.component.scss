@@ -83,6 +83,7 @@
     }
     .card-desc {
       font-size: $content-text-high-font-size;
+      flex-grow: 1;
     }
 
     .card-button {
