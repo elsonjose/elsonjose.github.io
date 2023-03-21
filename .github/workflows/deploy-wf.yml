@@ -35,10 +35,8 @@ jobs:
         run: npm run build
         working-directory: ./portfolio
       - name: Deploy code
-        uses: cpina/github-action-push-to-another-repository@master
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          source-directory: 'portfolio/dist/portfolio'
-          destination-github-username: 'elsonjose'
-          destination-repository-name: ''
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          FOLDER: portfolio/dist/portfolio
+          BRANCH: master
