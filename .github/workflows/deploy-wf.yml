@@ -29,18 +29,17 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
       - name: Install dependencies
-        working-directory: ./portfolio
         run: npm install
+        working-directory: ./portfolio
       - name: Build project
-        working-directory: ./portfolio
         run: npm run build
-      - name: Deploy code
         working-directory: ./portfolio
+      - name: Deploy code
         uses: cpina/github-action-push-to-another-repository@master
+        working-directory: ./portfolio
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist/portfolio'
           destination-github-username: 'elsonjose'
           destination-repository-name: ''
-          user-email: ${{ secrets.EMAIL }}
