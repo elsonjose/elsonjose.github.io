@@ -1,0 +1,46 @@
+name: Build Portfolio (wf)
+on:
+  push:
+    branches:
+      - wf
+jobs:
+  j1:
+    name: Build & Deploy Portfolio App
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.15.0]
+    steps:
+      - name: Checkout latest
+        uses: actions/checkout@v1
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name}}-${{hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Setup node ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Install dependencies
+        working-directory: ./portfolio
+        run: npm install
+      - name: Build project
+        working-directory: ./portfolio
+        run: npm run build
+      - name: Deploy code
+        working-directory: ./portfolio
+        uses: cpina/github-action-push-to-another-repository@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'dist/portfolio'
+          destination-github-username: 'elsonjose'
+          destination-repository-name: ''
+          user-email: {{secrets.EMAIL}}
