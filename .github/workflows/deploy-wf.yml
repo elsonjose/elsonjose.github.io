@@ -1,0 +1,42 @@
+name: Build Portfolio (wf)
+on:
+  push:
+    branches:
+      - wf
+jobs:
+  j1:
+    name: Build & Deploy Portfolio App
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.15.0]
+    steps:
+      - name: Checkout latest
+        uses: actions/checkout@v1
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name}}-${{hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Setup node ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./portfolio
+      - name: Build project
+        run: npm run build
+        working-directory: ./portfolio
+      - name: Deploy code
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          FOLDER: portfolio/dist/portfolio
+          BRANCH: master
