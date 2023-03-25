@@ -1,8 +1,11 @@
-name: Build Portfolio (wf)
+name: Build Portfolio
 on:
   push:
     branches:
-      - wf
+      - develop
+    paths:
+      - portfolio/**
+
 jobs:
   j1:
     name: Build & Deploy Portfolio App
