@@ -1,6 +1,5 @@
 .button-wrapper {
   text-align: center;
-  padding: 0.6rem 0.8rem;
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: var(--content-text-font-size);
@@ -10,7 +9,6 @@
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 20px 0 var(--highlight-color) inset,
-      0 0 20px 0.25px var(--highlight-color);
+    background-color: var(--highlight-tint-color);
   }
 }
