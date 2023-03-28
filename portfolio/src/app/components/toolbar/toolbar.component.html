@@ -5,7 +5,7 @@
       <div class="toolbar-menu-list-item" *ngIf="item.type == navigationType.LABEL" (click)="onToolbarItemClicked(item.actionId)">
         {{ item.label | titlecase }}
       </div>
-      <app-button *ngIf="item.type == navigationType.BUTTON" [menuItem]="item" (onClick)="onToolbarItemClicked(item.actionId)">
+      <app-button class="toolbar-menu-list-button" *ngIf="item.type == navigationType.BUTTON" [menuItem]="item" (onClick)="onToolbarItemClicked(item.actionId)">
       </app-button>
     </li>
   </ul>

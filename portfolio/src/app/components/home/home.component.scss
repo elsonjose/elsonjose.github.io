@@ -1,0 +1,32 @@
+section {
+  display: flex;
+  max-width: var(--section-max-width);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--nav-height);
+  min-height: 100vh;
+
+  .home-salutation{
+    color: var(--highlight-color);
+    text-align: start;
+  }
+  .home-name{
+    margin-top: 0.4rem;
+    font-weight: 500;
+    font-size: var(--content-title-font-size);
+    color: var(--title-priority-1);
+  }
+  .home-tagline{
+    font-weight: 500;
+    font-size: var(--content-title-font-size);
+    color: var(--title-priority-2);
+  }
+  .home-intro{
+    margin-top: 0.6rem;
+    max-width: 550px;
+    text-align: justify;
+  }
+  .home-hire-button{
+    margin-top: 3rem;
+  }
+}

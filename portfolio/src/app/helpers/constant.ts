@@ -48,6 +48,7 @@ export enum MenuActionId {
   WORK = 3,
   CONTACT = 4,
   RESUME = 5,
+  HIRE_ME = 6,
 }
 
 export enum SideNavActionId {

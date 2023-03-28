@@ -7,21 +7,35 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  app-toolbar{
+  app-toolbar {
     width: 100%;
     position: fixed;
     padding: 0 50px;
   }
 
-  .left-side-nav{
+  .left-side-nav {
     position: fixed;
     bottom: 0;
     left: 58px;
   }
 
-  .right-side-nav{
+  .right-side-nav {
     position: fixed;
     bottom: 0;
-    right: 58px;
+    right: 61.5px;
+  }
+}
+
+.content-pages {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  main {
+    max-width: var(--screen-max-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
