@@ -2,7 +2,7 @@
   <img class="toolbar-logo" src="assets/logo.svg"/>
   <ul class="toolbar-list">
     <li *ngFor="let item of menu">
-      <div class="toolbar-menu-list-item" *ngIf="item.type == navigationType.LABEL" (click)="onToolbarItemClicked(item.actionId)">
+      <div class="toolbar-menu-list-item animate-underline" *ngIf="item.type == navigationType.LABEL" (click)="onToolbarItemClicked(item.actionId)">
         {{ item.label | titlecase }}
       </div>
       <app-button class="toolbar-menu-list-button" *ngIf="item.type == navigationType.BUTTON" [menuItem]="item" (onClick)="onToolbarItemClicked(item.actionId)">

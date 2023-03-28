@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ButtonComponent } from './components/button/button.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/sections/home/home.component';
 
 @NgModule({
   declarations: [

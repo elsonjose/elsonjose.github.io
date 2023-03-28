@@ -27,6 +27,9 @@ section {
     text-align: start;
     font-size: var(--content-text-high-font-size);
     line-height: 26px;
+    a{
+      position: relative;
+    }
   }
 }
 
