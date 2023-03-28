@@ -1,5 +1,6 @@
 <div class="content" id="top-view">
   <app-toolbar (toolbarEmitter)="onToolbarEvent($event)"></app-toolbar>
-  
+  <app-sidenav class="left-side-nav" [sideNavActions]="leftSideNavItems"></app-sidenav>
+  <app-sidenav class="right-side-nav"></app-sidenav>
 </div>
 

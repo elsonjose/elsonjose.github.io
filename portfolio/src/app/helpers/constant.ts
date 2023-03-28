@@ -50,4 +50,8 @@ export enum MenuActionId {
   RESUME = 5,
 }
 
+export enum SideNavActionId {
+  GITHUB = 1,
+  LINKEDIN = 2,
+}
 export const BLOG_URL = 'https://dev.to/elsonjose';

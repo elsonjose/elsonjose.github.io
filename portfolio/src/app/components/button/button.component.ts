@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationType } from 'src/app/helpers/constant';
-import { Menu } from 'src/app/models/menu-action-model';
+import { Menu } from 'src/app/models/menu';
 
 @Component({
   selector: 'app-button',

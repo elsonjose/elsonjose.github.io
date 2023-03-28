@@ -1,0 +1,25 @@
+.side-nav-wrapper {
+  li {
+    list-style-type: none;
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        -webkit-filter: drop-shadow(0 0 4px var(--title-priority-1));
+        transform: translateY(-4px);
+      }
+    }
+  }
+}
+
+.side-nav-wrapper::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: var(--title-priority-1);
+}
