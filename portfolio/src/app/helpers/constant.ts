@@ -37,4 +37,17 @@ export enum ContactType {
   MAIL = 4,
 }
 
+export enum NavigationType {
+  LABEL = 1,
+  BUTTON = 2,
+}
+
+export enum MenuActionId {
+  ABOUT = 1,
+  EXPERIENCE = 2,
+  WORK = 3,
+  CONTACT = 4,
+  RESUME = 5,
+}
+
 export const BLOG_URL = 'https://dev.to/elsonjose';

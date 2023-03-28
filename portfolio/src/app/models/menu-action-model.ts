@@ -1,9 +1,8 @@
-import { MenuActionType, MenuAction } from '../helpers/constant';
-import { Literal } from '../helpers/literals';
+import { MenuActionId, NavigationType } from "../helpers/constant";
 
-export interface MenuActionModel {
-  label: Literal;
-  url: string;
-  action: MenuAction;
-  actionType: MenuActionType
+export interface Menu {
+  label: string;
+  type: NavigationType;
+  id: string;
+  actionId: MenuActionId
 }

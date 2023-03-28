@@ -1,11 +1,32 @@
-body {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
 .url-text {
   text-decoration: none;
   color: #2478e7;
 }
+
+:root {
+  --background-color: #0a192f;
+  --highlight-color: #007fff;
+  --title-priority-1: #ffffff;
+  --title-priority-2: #8892b0;
+  --font-color: #a7aec4;
+  --highlight-tint-color: #4da5ff;
+
+  --content-text-font-size: 1rem;
+  --content-text-high-font-size: 1.2rem;
+  --content-sub-title-font-size: 1.4rem;
+  --content-title-font-size: 4rem;
+  --bold-content-title-font-size: 8rem;
+
+  --screen-max-width: 1320px;
+}
+
+
+*{
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  color: var(--font-color);
+}
+
+

@@ -1,14 +1,6 @@
-@import "../../variables";
-
 .toolbar-list {
   list-style-type: none;
   text-align: end;
-  padding: 0;
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
 
   li {
     flex-grow: 1;
@@ -17,19 +9,32 @@
       cursor: pointer;
       display: inline;
       text-decoration: none;
-      color: black;
-      font-size: $content-text-font-size;
+      color: var(--font-color);
+      font-size: var(--content-text-font-size);
       font-weight: 500;
-      letter-spacing: 0.6px;
+      margin-left: 2rem;
+      transition: all 0.1s ease-in-out;
+      &:hover{
+        color: var(--highlight-color);
+      }
     }
   }
+}
 
-  li:nth-child(1) {
-    margin-right: 2rem;
-    padding: 1rem;
-  }
+.toolbar-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
 
-  li:nth-child(2) {
-    padding: 1rem 0 1rem 1rem;
+.toolbar-logo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    -webkit-filter: drop-shadow(0 0 2px var(--highlight-color));
   }
 }

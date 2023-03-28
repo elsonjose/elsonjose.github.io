@@ -10,7 +10,7 @@ import {
 } from './helpers/constant';
 import { Literal } from './helpers/literals';
 import { ContentBlock } from './models/content-block';
-import { MenuActionModel } from './models/menu-action-model';
+import { Menu } from './models/menu-action-model';
 
 @Component({
   selector: 'app-root',
@@ -24,20 +24,6 @@ export class AppComponent {
   isDrawerOpen = false;
 
   // The toolbar data to be passed onto the component
-  toolbarMenuList: MenuActionModel[] = [
-    {
-      label: Literal.PROJECT,
-      url: 'projects',
-      action: MenuAction.NONE,
-      actionType: MenuActionType.ID,
-    },
-    {
-      label: Literal.BLOG,
-      url: BLOG_URL,
-      action: MenuAction.NONE,
-      actionType: MenuActionType.URL,
-    },
-  ];
 
   aboutMeContent: ContentBlock = {
     title: 'About Me',
@@ -150,26 +136,6 @@ export class AppComponent {
     blocks: [],
   };
 
-  footerContent: MenuActionModel[] = [
-    {
-      label: Literal.ATTRIBUTIONS,
-      actionType: MenuActionType.ACTION,
-      url: '',
-      action: MenuAction.ATTRIBUTION,
-    },
-    {
-      label: Literal.CONTACT,
-      actionType: MenuActionType.URL,
-      url: 'header-contact',
-      action: MenuAction.NONE,
-    },
-    {
-      label: Literal.BACK_TO_TOP,
-      actionType: MenuActionType.URL,
-      url: 'top-view',
-      action: MenuAction.NONE,
-    },
-  ];
 
   onSmoothScroll(id: string) {
     document.getElementById(id)?.scrollIntoView({
@@ -179,25 +145,13 @@ export class AppComponent {
     });
   }
 
-  onToolbarEvent(menu: MenuActionModel) {
-    console.log(menu);
+  onToolbarEvent(actionId: number) {
+    console.log(actionId);
     
-    if (menu.actionType == MenuActionType.ID) {
-      switch (menu.label) {
-        case Literal.PROJECT:
-          this.onSmoothScroll(menu.url);
-          break;
-      }
-    }
+    
   }
 
-  public onFooterEvent(menu: MenuActionModel) {
-    if (menu.actionType == MenuActionType.ACTION) {
-      this.onOpenDrawer(menu.action);
-    } else if (menu.actionType == MenuActionType.URL) {
-      this.onSmoothScroll(menu.url);
-    }
-  }
+  
 
   public onContentEvent(actionId: DrawerAction) {
     this.onOpenDrawer(actionId);

@@ -1,22 +1,52 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MenuActionType } from 'src/app/helpers/constant';
-import { MenuActionModel } from 'src/app/models/menu-action-model';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MenuActionId, NavigationType } from 'src/app/helpers/constant';
+import { Menu } from 'src/app/models/menu-action-model';
+
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent {
-  // The toolbar menu data
-  @Input() toolbarMenuList: MenuActionModel[] = [];
+export class ToolbarComponent{
 
-  @Output() toolbarEmitter = new EventEmitter<MenuActionModel>();
+  navigationType = NavigationType;
 
-  onToolbarItemClicked(menu: MenuActionModel) {
-    if (menu.actionType == MenuActionType.URL) {
-      window.open(menu.url, '_blank');
-    } else {
-      this.toolbarEmitter.emit(menu);
+  menu: Menu[] = [
+    {
+      "label": "About",
+      "type": NavigationType.LABEL,
+      "id": "abc",
+      "actionId": MenuActionId.ABOUT
+    },
+    {
+      "label": "Experience",
+      "type": NavigationType.LABEL,
+      "id": "abc",
+      "actionId": MenuActionId.EXPERIENCE
+    },
+    {
+      "label": "Work",
+      "type": NavigationType.LABEL,
+      "id": "abc",
+      "actionId": MenuActionId.WORK
+    },
+    {
+      "label": "Contact",
+      "type": NavigationType.LABEL,
+      "id": "abc",
+      "actionId": MenuActionId.CONTACT
+    },
+    {
+      "label": "Resume",
+      "type": NavigationType.BUTTON,
+      "id": "abc",
+      "actionId": MenuActionId.RESUME
     }
+  ];
+  
+  @Output() toolbarEmitter = new EventEmitter<number>();  
+
+  onToolbarItemClicked(actionId: number) {
+    // this.toolbarEmitter.emit(actionId);
   }
 }
