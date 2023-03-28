@@ -1,32 +1,39 @@
 section {
   display: flex;
-  max-width: var(--section-max-width);
+  width: var(--section-max-width);
   flex-direction: column;
   justify-content: center;
-  padding: var(--nav-height);
   min-height: 100vh;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
-  .home-salutation{
+  .home-salutation {
     color: var(--highlight-color);
     text-align: start;
+    font-size: var(--content-text-high-font-size);
   }
-  .home-name{
+  .home-name {
     margin-top: 0.4rem;
     font-weight: 500;
-    font-size: var(--content-title-font-size);
+    font-size: var(--bold-content-title-font-size);
     color: var(--title-priority-1);
   }
-  .home-tagline{
-    font-weight: 500;
+  .home-tagline {
     font-size: var(--content-title-font-size);
     color: var(--title-priority-2);
   }
-  .home-intro{
+  .home-intro {
     margin-top: 0.6rem;
-    max-width: 550px;
-    text-align: justify;
+    max-width: 500px;
+    text-align: start;
+    font-size: var(--content-text-high-font-size);
+    line-height: 26px;
   }
-  .home-hire-button{
-    margin-top: 3rem;
-  }
+}
+
+:host ::ng-deep  .button-wrapper {
+  margin-top: 4rem;
+  display: block;
+  width: 200px;
+  text-align: center;
+  padding: 1.4rem 0;
 }

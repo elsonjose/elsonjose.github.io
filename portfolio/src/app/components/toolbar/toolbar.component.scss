@@ -21,9 +21,13 @@
   }
 }
 
-.toolbar-menu-list-button{
+:host ::ng-deep .button-wrapper {
+  display: inline;
+  text-align: center;
   margin-left: 2rem;
 }
+
+
 .toolbar-wrapper {
   display: flex;
   flex-flow: row nowrap;

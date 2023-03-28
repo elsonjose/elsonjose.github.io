@@ -14,8 +14,8 @@
   --content-text-font-size: 1rem;
   --content-text-high-font-size: 1.2rem;
   --content-sub-title-font-size: 1.4rem;
-  --content-title-font-size: 3.4rem;
-  --bold-content-title-font-size: 8rem;
+  --content-title-font-size: 5rem;
+  --bold-content-title-font-size: 6rem;
 
   --nav-height:100px;
   --screen-max-width: 1600px;
@@ -29,8 +29,6 @@
   padding: 0;
   margin: 0;
   color: var(--font-color);
-  font-size: 20px;
-  letter-spacing: 0.2px;
   a{
     text-decoration: none;
     color: var(--highlight-color);
