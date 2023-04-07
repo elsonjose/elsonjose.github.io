@@ -15,6 +15,7 @@
   --content-text-font-size: 1rem;
   --content-text-high-font-size: 1.2rem;
   --content-sub-title-font-size: 1.4rem;
+  --page-title-font-size: 3rem;
   --content-title-font-size: 5rem;
   --bold-content-title-font-size: 6rem;
 
@@ -39,6 +40,14 @@
 
 .animate-underline:hover::before {
   transform: scaleX(1);
+}
+
+.section-page{
+  display: flex;
+  width: var(--section-max-width);
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 * {

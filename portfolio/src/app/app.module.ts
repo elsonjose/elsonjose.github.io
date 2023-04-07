@@ -12,6 +12,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ButtonComponent } from './components/button/button.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/sections/home/home.component';
+import { NavTitleComponent } from './components/nav-title/nav-title.component';
+import { AboutComponent } from './components/sections/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HomeComponent } from './components/sections/home/home.component';
     ButtonComponent,
     SidenavComponent,
     HomeComponent,
+    NavTitleComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
