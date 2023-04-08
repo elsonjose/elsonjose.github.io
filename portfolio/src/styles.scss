@@ -45,6 +45,7 @@
 .section-page{
   display: flex;
   width: var(--section-max-width);
+  max-width: var(--section-max-width);
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
@@ -59,5 +60,10 @@
   a {
     text-decoration: none;
     color: var(--highlight-color);
+  }
+  p{
+    font-size: var(--content-text-high-font-size);
+    text-align: justify;
+    line-height: 26px;
   }
 }
