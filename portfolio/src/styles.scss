@@ -65,9 +65,10 @@
   color: var(--font-color);
   a {
     text-decoration: none;
+    position: relative;
     color: var(--highlight-color);
   }
-  p {
+  p{
     font-size: var(--content-text-high-font-size);
     text-align: justify;
     line-height: 26px;

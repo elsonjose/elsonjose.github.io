@@ -6,13 +6,36 @@
         <li
           class="company-item"
           *ngFor="let company of companies; let i = index"
-          [ngClass]="selectedCompany === i ? 'selected-company' : 'company'"
-          (click)="selectedCompany = i"
+          [ngClass]="
+            selectedCompanyIndex === i ? 'selected-company' : 'company'
+          "
+          (click)="
+            selectedCompanyIndex = i;
+            selectedCompany = companyInfo[selectedCompanyIndex]
+          "
         >
           {{ company }}
         </li>
       </ul>
     </div>
-    <div class="experience-right-container"></div>
+    <div class="experience-right-container">
+      <h2 class="experience-title">
+        {{ selectedCompany.role }} {{ selectedCompany.connector }}
+        <a
+          href="{{ selectedCompany.institutionUrl }}"
+          class="animate-underline"
+          target="_blank"
+          >{{ selectedCompany.institutionName }}</a
+        >
+      </h2>
+      <p class="experience-duration">
+        {{ selectedCompany.workDuration }}
+      </p>
+      <ul class="experience-responsibility">
+        <li *ngFor="let responsibility of selectedCompany.responsibilities">
+          <p>{{ responsibility }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

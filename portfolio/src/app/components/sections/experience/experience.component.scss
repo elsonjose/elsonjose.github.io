@@ -1,5 +1,8 @@
 .experience-container {
+  margin-top: 4rem;
   .experience-left-container {
+    max-width: 30%;
+    min-height: 270px;
     ul {
       li {
         height: 4rem;
@@ -18,12 +21,35 @@
       }
     }
   }
+  .experience-right-container {
+    flex-grow: 1;
+    padding-left: 3rem;
+    max-width: 70%;
+    .experience-title{
+      color: var(--title-priority-2);
+      font-weight: 500;
+    }
+    .experience-duration {
+      margin: 1rem 0;
+    }
+    .experience-responsibility {
+      li {
+        &::marker {
+          content: url("./../../../..//assets/bullet.svg");
+        }
+        p {
+          margin-left: 2rem;
+          margin-top: 0.6rem;
+        }
+      }
+    }
+  }
 }
 
 .company-item {
   cursor: pointer;
   transition: all 0.2s linear;
-  &:hover{
+  &:hover {
     background-color: var(--highlight-tint-color);
   }
 }
