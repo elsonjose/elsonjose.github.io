@@ -1,7 +1,4 @@
 .about-content-wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 2rem 0;
   .about-left-container,
   .about-right-container {
     width: 50%;
@@ -60,6 +57,7 @@
       &::after {
         top: 15px;
         left: 15px;
+        opacity: 0;
       }
     }
   }

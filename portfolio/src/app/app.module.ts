@@ -14,6 +14,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/sections/home/home.component';
 import { NavTitleComponent } from './components/nav-title/nav-title.component';
 import { AboutComponent } from './components/sections/about/about.component';
+import { ExperienceComponent } from './components/sections/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AboutComponent } from './components/sections/about/about.component';
     HomeComponent,
     NavTitleComponent,
     AboutComponent,
+    ExperienceComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MenuActionId, NavigationType } from 'src/app/helpers/constant';
-import { Menu } from 'src/app/models/menu';
+import { IMenu } from 'src/app/models/menu';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,7 +11,7 @@ export class ToolbarComponent{
 
   navigationType = NavigationType;
 
-  menu: Menu[] = [
+  menu: IMenu[] = [
     {
       "label": "About",
       "type": NavigationType.LABEL,

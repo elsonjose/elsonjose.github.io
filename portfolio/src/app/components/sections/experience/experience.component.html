@@ -1,0 +1,18 @@
+<section class="section-page">
+  <app-nav-title [index]="'2.'" [title]="'Where I’ve Worked'"></app-nav-title>
+  <div class="experience-container section-content-wrapper">
+    <div class="experience-left-container">
+      <ul>
+        <li
+          class="company-item"
+          *ngFor="let company of companies; let i = index"
+          [ngClass]="selectedCompany === i ? 'selected-company' : 'company'"
+          (click)="selectedCompany = i"
+        >
+          {{ company }}
+        </li>
+      </ul>
+    </div>
+    <div class="experience-right-container"></div>
+  </div>
+</section>

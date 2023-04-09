@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuActionId, NavigationType } from 'src/app/helpers/constant';
-import { Menu } from 'src/app/models/menu';
+import { IMenu } from 'src/app/models/menu';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Menu } from 'src/app/models/menu';
 })
 export class HomeComponent{
 
-  menu:Menu ={
+  menu:IMenu ={
     id:"",
     actionId:MenuActionId.HIRE_ME,
     label:"Hire me!",

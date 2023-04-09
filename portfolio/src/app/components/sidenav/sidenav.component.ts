@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SideNavItem } from 'src/app/models/sidenav-item';
+import { ISideNavItem } from 'src/app/models/sidenav-item';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +8,7 @@ import { SideNavItem } from 'src/app/models/sidenav-item';
 })
 export class SidenavComponent {
 
-  @Input() sideNavActions:SideNavItem[] = []
+  @Input() sideNavActions:ISideNavItem[] = []
 
   
 

@@ -1,6 +1,6 @@
 import { SideNavActionId } from "../helpers/constant";
 
-export interface SideNavItem {
+export interface ISideNavItem {
     icon: string;
     actionId: SideNavActionId
     label:string

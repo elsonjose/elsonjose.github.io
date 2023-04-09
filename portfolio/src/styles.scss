@@ -42,7 +42,13 @@
   transform: scaleX(1);
 }
 
-.section-page{
+.section-content-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 2rem 0;
+}
+
+.section-page {
   display: flex;
   width: var(--section-max-width);
   max-width: var(--section-max-width);
@@ -61,7 +67,7 @@
     text-decoration: none;
     color: var(--highlight-color);
   }
-  p{
+  p {
     font-size: var(--content-text-high-font-size);
     text-align: justify;
     line-height: 26px;

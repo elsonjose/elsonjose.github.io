@@ -1,0 +1,43 @@
+.experience-container {
+  .experience-left-container {
+    ul {
+      li {
+        height: 4rem;
+        list-style-type: none;
+        font-size: var(--content-text-high-font-size);
+        padding-right: 1rem;
+      }
+      li:before {
+        content: "";
+        display: inline-block;
+        height: 4rem;
+        width: 6px;
+        vertical-align: -100%;
+        margin-right: 1rem;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+}
+
+.company-item {
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover{
+    background-color: var(--highlight-tint-color);
+  }
+}
+
+.selected-company {
+  &:before {
+    background-color: var(--highlight-color);
+  }
+  color: var(--highlight-color);
+}
+
+.company {
+  opacity: 0.6;
+  &:before {
+    background-color: var(--highlight-tint-color);
+  }
+}

@@ -10,8 +10,8 @@ import {
   SideNavActionId,
 } from './helpers/constant';
 import { Literal } from './helpers/literals';
-import { Menu } from './models/menu';
-import { SideNavItem } from './models/sidenav-item';
+import { IMenu } from './models/menu';
+import { ISideNavItem } from './models/sidenav-item';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +26,7 @@ export class AppComponent {
 
   // The toolbar data to be passed onto the component
 
-  leftSideNavItems:SideNavItem[] = [
+  leftSideNavItems:ISideNavItem[] = [
     {
       icon:"assets/linkedin.svg",
       actionId:SideNavActionId.LINKEDIN,
