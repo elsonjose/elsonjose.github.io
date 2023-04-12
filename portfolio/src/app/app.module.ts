@@ -15,6 +15,7 @@ import { HomeComponent } from './components/sections/home/home.component';
 import { NavTitleComponent } from './components/nav-title/nav-title.component';
 import { AboutComponent } from './components/sections/about/about.component';
 import { ExperienceComponent } from './components/sections/experience/experience.component';
+import { NotePointComponent } from './components/note-point/note-point.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ExperienceComponent } from './components/sections/experience/experience
     NavTitleComponent,
     AboutComponent,
     ExperienceComponent,
+    NotePointComponent,
   ],
   imports: [
     BrowserModule,

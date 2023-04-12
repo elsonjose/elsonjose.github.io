@@ -25,7 +25,7 @@
     flex-grow: 1;
     padding-left: 3rem;
     max-width: 70%;
-    .experience-title{
+    .experience-title {
       color: var(--title-priority-2);
       font-weight: 500;
     }
@@ -44,6 +44,10 @@
       }
     }
   }
+}
+
+.experience-awards {
+  margin-top: 4rem;
 }
 
 .company-item {

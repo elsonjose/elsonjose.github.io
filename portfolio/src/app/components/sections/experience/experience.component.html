@@ -38,4 +38,13 @@
       </ul>
     </div>
   </div>
+  <app-nav-title [title]="'Awards & Recognition'"></app-nav-title>
+  <ul class="experience-awards">
+    <app-note-point
+      *ngFor="let notePoint of notePoints"
+      [title]="notePoint.title"
+      [subTitle]="notePoint.subTitle"
+      [note]="notePoint.note"
+    ></app-note-point>
+  </ul>
 </section>
