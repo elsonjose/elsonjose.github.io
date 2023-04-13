@@ -68,7 +68,7 @@ export class ExperienceComponent implements OnInit {
     {
       title: 'Recommendations',
       subTitle: '',
-      note: 'View my recommendations in <a href="https://www.linkedin.com/in/elson-jose-457726147/" target="_blank">linkedIn</a> while associating and collaborating with various clients. ',
+      note: 'View my recommendations in <a class="animate-underline" href="https://www.linkedin.com/in/elson-jose-457726147/" target="_blank">linkedIn</a> while associating and collaborating with various clients. ',
     },
   ];
 
