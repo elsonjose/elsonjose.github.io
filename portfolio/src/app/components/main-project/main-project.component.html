@@ -1,0 +1,18 @@
+<div class="main-project-container">
+  <div class="main-project-image-container">
+    <img src="{{ work.image }}" alt="work.title" />
+  </div>
+  <div class="main-project-content-container">
+    <h2>
+      {{ work.title }}
+    </h2>
+    <p>
+      {{ work.description }}
+    </p>
+    <div class="main-project-links">
+      <a *ngFor="let link of work.links" href="{{ link.url }}" target="_blank"
+        ><img src="{{ link.image }}" alt=""
+      /></a>
+    </div>
+  </div>
+</div>

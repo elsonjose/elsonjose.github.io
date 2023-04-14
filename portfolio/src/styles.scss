@@ -11,6 +11,7 @@
   --title-priority-2: #8892b0;
   --font-color: #a7aec4;
   --highlight-tint-color: rgba(77, 165, 255, 0.2);
+  --project-description-background-color:rgba(0,0,0,0.8);
 
   --content-text-font-size: 1rem;
   --content-text-high-font-size: 1.2rem;
@@ -22,6 +23,8 @@
   --nav-height: 100px;
   --screen-max-width: 1600px;
   --section-max-width: 1000px;
+  --project-content-max-width: 500px;
+  --project-image-width: 600px
 }
 
 .animate-underline::before {

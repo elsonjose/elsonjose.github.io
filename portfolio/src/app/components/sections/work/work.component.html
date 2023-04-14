@@ -1,0 +1,13 @@
+<section class="section-page">
+  <app-nav-title
+    [index]="'3.'"
+    [title]="'Few Stuffs I\'ve Built'"
+  ></app-nav-title>
+  <div class="work-content-container section-content-wrapper">
+    <app-main-project
+      *ngFor="let work of mainProjects; let i = index"
+      [work]="work"
+      [index]="i"
+    ></app-main-project>
+  </div>
+</section>

@@ -1,14 +1,17 @@
 <div class="app-info">DEVELOPMENT IN PROGRESS</div>
 <div class="content" id="top-view">
   <app-toolbar (toolbarEmitter)="onToolbarEvent($event)"></app-toolbar>
-  <app-sidenav class="left-side-nav" [sideNavActions]="leftSideNavItems"></app-sidenav>
+  <app-sidenav
+    class="left-side-nav"
+    [sideNavActions]="leftSideNavItems"
+  ></app-sidenav>
   <app-sidenav class="right-side-nav"></app-sidenav>
   <div class="content-pages">
     <main>
       <app-home></app-home>
       <app-about></app-about>
       <app-experience></app-experience>
+      <app-work></app-work>
     </main>
   </div>
 </div>
-

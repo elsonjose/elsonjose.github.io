@@ -16,6 +16,8 @@ import { NavTitleComponent } from './components/nav-title/nav-title.component';
 import { AboutComponent } from './components/sections/about/about.component';
 import { ExperienceComponent } from './components/sections/experience/experience.component';
 import { NotePointComponent } from './components/note-point/note-point.component';
+import { WorkComponent } from './components/sections/work/work.component';
+import { MainProjectComponent } from './components/main-project/main-project.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { NotePointComponent } from './components/note-point/note-point.component
     AboutComponent,
     ExperienceComponent,
     NotePointComponent,
+    WorkComponent,
+    MainProjectComponent,
   ],
   imports: [
     BrowserModule,
