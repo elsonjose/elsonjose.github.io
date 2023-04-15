@@ -23,12 +23,24 @@ export class WorkComponent implements OnInit {
     {
       title: 'CROP',
       description:
-        'Character Recognition Of Plates is a program designed to detect and recognize character from images.',
+        'Character Recognition Of Plates is a program designed to detect and recognize license plate characters from image.',
       image: 'assets/crop.svg',
       links: [
         {
           image: 'assets/github.svg',
           url: 'https://github.com/elsonjose/crop',
+        },
+      ],
+    },
+    {
+      title: 'HomeStream',
+      description:
+        'A self hosted web app allowing users to stream movies from any device connected to the same router. This project is under development.',
+      image: 'assets/homestream.svg',
+      links: [
+        {
+          image: 'assets/github.svg',
+          url: 'https://github.com/elsonjose/homestream',
         },
       ],
     },

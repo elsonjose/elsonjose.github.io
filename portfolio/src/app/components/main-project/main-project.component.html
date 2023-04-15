@@ -1,8 +1,18 @@
 <div class="main-project-container">
-  <div class="main-project-image-container">
+  <div
+    [ngClass]="[
+      'main-project-image-container',
+      index % 2 == 0 ? 'img-content-right' : 'img-content-left'
+    ]"
+  >
     <img src="{{ work.image }}" alt="work.title" />
   </div>
-  <div class="main-project-content-container">
+  <div
+    [ngClass]="[
+      'main-project-content-container',
+      index % 2 == 0 ? 'text-content-left' : 'text-content-right'
+    ]"
+  >
     <h2>
       {{ work.title }}
     </h2>

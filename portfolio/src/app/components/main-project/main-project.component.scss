@@ -31,10 +31,8 @@
     height: 404px;
     position: absolute;
     display: flex;
-    left: 50%;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
     h2 {
       font-size: var(--page-title-font-size);
       color: var(--title-priority-1);
@@ -58,4 +56,22 @@
       }
     }
   }
+}
+
+.img-content-right {
+  right: 0;
+}
+
+.img-content-left {
+  left: 0;
+}
+
+.text-content-left {
+  left: 0;
+  align-items: start;
+}
+
+.text-content-right {
+  right: 0;
+  align-items: end;
 }
