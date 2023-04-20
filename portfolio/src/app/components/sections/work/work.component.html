@@ -1,4 +1,4 @@
-<section class="section-page">
+<section class="section-page work-wrapper">
   <app-nav-title
     [index]="'3.'"
     [title]="'Few Stuffs I\'ve Built'"
@@ -9,5 +9,25 @@
       [work]="work"
       [index]="i"
     ></app-main-project>
+  </div>
+  <app-nav-title [index]="''" [title]="'Few More Stuffs'"></app-nav-title>
+  <div class="mini-projects-container">
+    <div class="mini-projects-title-container">
+      <h4 class="mini-project-title">Title</h4>
+      <h4 class="mini-project-description">Description</h4>
+    </div>
+    <hr class="separator" />
+    <div
+      class="mini-projects-content-container"
+      *ngFor="let project of miniProjects"
+    >
+      <div class="mini-projects-content-wrapper">
+        <p>{{ project.title }}</p>
+        <p>
+          {{ project.description }}
+        </p>
+      </div>
+      <hr class="separator-mini" />
+    </div>
   </div>
 </section>
