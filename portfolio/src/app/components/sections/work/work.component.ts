@@ -49,6 +49,12 @@ export class WorkComponent implements OnInit {
 
   miniProjects: IMiniProject[] = [
     {
+      title: 'IIM Campus',
+      description:
+        'Three android apps for Indian Institute of Management, Indore providing various features for students, faculties and admins.',
+      url: 'https://github.com/Prodlab-IIMI/iim-campus',
+    },
+    {
       title: 'InstaSave',
       description:
         'An android app allowing users to download and view instagram posts, stories & reels anonymously.',
@@ -68,8 +74,7 @@ export class WorkComponent implements OnInit {
     },
     {
       title: 'ExploreAr',
-      description:
-        'An android app for viewing Augmented Reality models.',
+      description: 'An android app for viewing Augmented Reality models.',
       url: 'https://github.com/elsonjose/Learnings/tree/master/ExploreAr',
     },
     {
