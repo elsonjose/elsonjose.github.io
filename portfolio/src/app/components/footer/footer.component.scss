@@ -1,0 +1,16 @@
+.footer-container {
+  margin-bottom: 4rem;
+  .footer-credit-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-creator-title {
+      font-weight: bold;
+      margin: 0.2rem 0;
+    }
+    img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+  }
+}

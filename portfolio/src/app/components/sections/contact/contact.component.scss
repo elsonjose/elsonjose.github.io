@@ -1,0 +1,18 @@
+.section-content-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  p {
+    max-width: 500px;
+    text-align: center;
+  }
+}
+
+:host ::ng-deep .button-wrapper {
+  margin-top: 4rem;
+  display: block;
+  width: 200px;
+  text-align: center;
+  padding: 1rem 2rem;
+}

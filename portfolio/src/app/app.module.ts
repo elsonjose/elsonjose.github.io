@@ -18,6 +18,8 @@ import { ExperienceComponent } from './components/sections/experience/experience
 import { NotePointComponent } from './components/note-point/note-point.component';
 import { WorkComponent } from './components/sections/work/work.component';
 import { MainProjectComponent } from './components/main-project/main-project.component';
+import { ContactComponent } from './components/sections/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MainProjectComponent } from './components/main-project/main-project.com
     NotePointComponent,
     WorkComponent,
     MainProjectComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
