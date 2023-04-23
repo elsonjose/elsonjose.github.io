@@ -11,19 +11,30 @@
     width: 100%;
     position: fixed;
     padding: 0 50px;
+    animation: dropInFromAbove 0.5s ease-in both;
+    transition: top 0.3s;
   }
 
   .left-side-nav {
+    opacity: 0;
     position: fixed;
     bottom: 0;
     left: 58px;
+    animation: fadeIn 0.5s ease-in 1s forwards;
   }
 
   .right-side-nav {
+    opacity: 0;
     position: fixed;
     bottom: 0;
     right: 61.5px;
+    animation: fadeIn 0.5s ease-in 1s forwards;
   }
+}
+
+app-home {
+  opacity: 0;
+  animation: dropInFromBelow 0.5s ease-in forwards;
 }
 
 .content-pages {
@@ -40,7 +51,7 @@
   }
 }
 
-.app-info{
+.app-info {
   text-align: center;
   color: black;
   padding: 0.2rem 0;

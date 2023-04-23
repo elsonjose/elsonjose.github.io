@@ -1,16 +1,5 @@
-import { ViewportScroller } from '@angular/common';
-import { Component } from '@angular/core';
-import {
-  ContentBlockType,
-  ContentMessageType,
-  MenuActionType,
-  MenuAction,
-  BLOG_URL,
-  DrawerAction,
-  SideNavActionId,
-} from './helpers/constant';
-import { Literal } from './helpers/literals';
-import { IMenu } from './models/menu';
+import { Component, HostListener } from '@angular/core';
+import { SideNavActionId } from './helpers/constant';
 import { ISideNavItem } from './models/sidenav-item';
 
 @Component({
@@ -19,26 +8,22 @@ import { ISideNavItem } from './models/sidenav-item';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private scroller: ViewportScroller) {}
+  prevScrollOffset = window.pageYOffset;
 
-  // Specifies whether the drawer is open or not
-  isDrawerOpen = false;
+  constructor() {}
 
-  // The toolbar data to be passed onto the component
-
-  leftSideNavItems:ISideNavItem[] = [
+  leftSideNavItems: ISideNavItem[] = [
     {
-      icon:"assets/linkedin.svg",
-      actionId:SideNavActionId.LINKEDIN,
-      label:"linkedin"
+      icon: 'assets/linkedin.svg',
+      actionId: SideNavActionId.LINKEDIN,
+      label: 'linkedin',
     },
     {
-      icon:"assets/github.svg",
-      actionId:SideNavActionId.GITHUB,
-      label:"GitHub"
-    }
-  ]
-
+      icon: 'assets/github.svg',
+      actionId: SideNavActionId.GITHUB,
+      label: 'GitHub',
+    },
+  ];
 
   onSmoothScroll(id: string) {
     document.getElementById(id)?.scrollIntoView({
@@ -50,30 +35,9 @@ export class AppComponent {
 
   onToolbarEvent(actionId: number) {
     console.log(actionId);
-    
-    
   }
 
-  
-
-  public onContentEvent(actionId: DrawerAction) {
-    this.onOpenDrawer(actionId);
-  }
-
-  onOpenDrawer(actionId: number) {
-    switch (actionId) {
-      case DrawerAction.ATTRIBUTION: {
-        this.isDrawerOpen = true;
-        break;
-      }
-      case DrawerAction.ROAD_MAP: {
-        this.isDrawerOpen = true;
-        break;
-      }
-      case DrawerAction.ACHIEVEMENTS: {
-        this.isDrawerOpen = true;
-        break;
-      }
-    }
+  onScroll(info: any) {
+    console.log(info);
   }
 }

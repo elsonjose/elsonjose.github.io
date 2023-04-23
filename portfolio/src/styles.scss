@@ -11,7 +11,7 @@
   --title-priority-2: #8892b0;
   --font-color: #a7aec4;
   --highlight-tint-color: rgba(77, 165, 255, 0.2);
-  --project-description-background-color:rgba(0,0,0,0.8);
+  --project-description-background-color: rgba(0, 0, 0, 0.8);
 
   --content-text-font-size: 1rem;
   --content-text-high-font-size: 1.2rem;
@@ -27,6 +27,37 @@
   --project-image-width: 600px;
   --one-half-screen-height: 150vh;
   --two-half-screen-height: 250vh;
+}
+
+@keyframes dropInFromAbove {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dropInFromBelow {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 4%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-underline::before {
@@ -73,7 +104,7 @@
     position: relative;
     color: var(--highlight-color);
   }
-  p{
+  p {
     font-size: var(--content-text-high-font-size);
     text-align: justify;
     line-height: 26px;
