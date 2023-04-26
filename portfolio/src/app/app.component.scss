@@ -11,8 +11,8 @@
     width: 100%;
     position: fixed;
     padding: 0 50px;
-    animation: dropInFromAbove 0.5s ease-in both;
     transition: top 0.3s;
+    z-index: 1;
   }
 
   .left-side-nav {
@@ -55,4 +55,12 @@ app-home {
   text-align: center;
   color: black;
   padding: 0.2rem 0;
+}
+
+.enter-animation{
+  animation: dropInFromAbove 0.5s ease-in both;
+}
+
+.exit-animation{
+  animation: pickOutFromBelow 0.5s ease-in both;
 }

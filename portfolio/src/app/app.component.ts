@@ -8,7 +8,8 @@ import { ISideNavItem } from './models/sidenav-item';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  prevScrollOffset = window.pageYOffset;
+  currentWindowY = 0;
+  isToolbarVisible = true;
 
   constructor() {}
 
@@ -37,7 +38,18 @@ export class AppComponent {
     console.log(actionId);
   }
 
-  onScroll(info: any) {
-    console.log(info);
+  onScroll(event: any) {
+    var previousWindowY = this.currentWindowY;
+    this.currentWindowY = event.srcElement.scrollTop;
+
+    var offset = this.currentWindowY - previousWindowY;
+
+    if (offset > 0) {
+      // scrolling down
+      this.isToolbarVisible = false;
+    } else {
+      //scrolling up
+      this.isToolbarVisible = true;
+    }
   }
 }

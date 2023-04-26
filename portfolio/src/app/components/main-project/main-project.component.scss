@@ -16,7 +16,7 @@
   .main-project-image-container::before {
     content: "";
     width: var(--project-image-width);
-    background: var(--highlight-light-color);
+    background: var(--highlight-light-tint-color);
     display: block;
     position: absolute;
     height: 400px;
