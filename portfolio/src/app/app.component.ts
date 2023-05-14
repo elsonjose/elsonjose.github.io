@@ -11,6 +11,7 @@ import { IMenu } from './models/menu';
 export class AppComponent {
   currentWindowY = 0;
   isToolbarVisible = true;
+  isAutomatedScroll = true;
 
   constructor() {}
 
@@ -37,7 +38,11 @@ export class AppComponent {
 
   onToolbarEvent(menu: IMenu) {
     if (menu.type == NavigationType.LABEL) {
+      this.isAutomatedScroll = true;
       this.onSmoothScroll(menu.id);
+      setTimeout(() => {
+        this.isAutomatedScroll = false;
+      }, 1000);
     } else {
     }
   }
@@ -46,14 +51,16 @@ export class AppComponent {
     var previousWindowY = this.currentWindowY;
     this.currentWindowY = event.srcElement.scrollTop;
 
-    var offset = this.currentWindowY - previousWindowY;
+    if (!this.isAutomatedScroll) {
+      var offset = this.currentWindowY - previousWindowY;
 
-    if (offset > 0) {
-      // scrolling down
-      this.isToolbarVisible = false;
-    } else {
-      //scrolling up
-      this.isToolbarVisible = true;
+      if (offset > 0) {
+        // scrolling down
+        this.isToolbarVisible = false;
+      } else {
+        //scrolling up
+        this.isToolbarVisible = true;
+      }
     }
   }
 }
