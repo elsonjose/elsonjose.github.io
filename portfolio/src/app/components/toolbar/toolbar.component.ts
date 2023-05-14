@@ -7,46 +7,45 @@ import { IMenu } from 'src/app/models/menu';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent{
-
+export class ToolbarComponent {
   navigationType = NavigationType;
 
   menu: IMenu[] = [
     {
-      "label": "About",
-      "type": NavigationType.LABEL,
-      "id": "abc",
-      "actionId": MenuActionId.ABOUT
+      label: 'About',
+      type: NavigationType.LABEL,
+      id: 'main-about',
+      actionId: MenuActionId.ABOUT,
     },
     {
-      "label": "Experience",
-      "type": NavigationType.LABEL,
-      "id": "abc",
-      "actionId": MenuActionId.EXPERIENCE
+      label: 'Experience',
+      type: NavigationType.LABEL,
+      id: 'main-experience',
+      actionId: MenuActionId.EXPERIENCE,
     },
     {
-      "label": "Work",
-      "type": NavigationType.LABEL,
-      "id": "abc",
-      "actionId": MenuActionId.WORK
+      label: 'Work',
+      type: NavigationType.LABEL,
+      id: 'main-work',
+      actionId: MenuActionId.WORK,
     },
     {
-      "label": "Contact",
-      "type": NavigationType.LABEL,
-      "id": "abc",
-      "actionId": MenuActionId.CONTACT
+      label: 'Contact',
+      type: NavigationType.LABEL,
+      id: 'main-contact',
+      actionId: MenuActionId.CONTACT,
     },
     {
-      "label": "Resume",
-      "type": NavigationType.BUTTON,
-      "id": "abc",
-      "actionId": MenuActionId.RESUME
-    }
+      label: 'Resume',
+      type: NavigationType.BUTTON,
+      id: '',
+      actionId: MenuActionId.RESUME,
+    },
   ];
-  
-  @Output() toolbarEmitter = new EventEmitter<number>();  
 
-  onToolbarItemClicked(actionId: number) {
-    // this.toolbarEmitter.emit(actionId);
+  @Output() toolbarEmitter = new EventEmitter<IMenu>();
+
+  onToolbarItemClicked(menu: IMenu) {
+    this.toolbarEmitter.emit(menu);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
-import { SideNavActionId } from './helpers/constant';
+import { NavigationType, SideNavActionId } from './helpers/constant';
 import { ISideNavItem } from './models/sidenav-item';
+import { IMenu } from './models/menu';
 
 @Component({
   selector: 'app-root',
@@ -34,8 +35,11 @@ export class AppComponent {
     });
   }
 
-  onToolbarEvent(actionId: number) {
-    console.log(actionId);
+  onToolbarEvent(menu: IMenu) {
+    if (menu.type == NavigationType.LABEL) {
+      this.onSmoothScroll(menu.id);
+    } else {
+    }
   }
 
   onScroll(event: any) {
