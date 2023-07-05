@@ -12,8 +12,11 @@ export class AppComponent {
   currentWindowY = 0;
   isToolbarVisible = true;
   isAutomatedScroll = true;
-
-  constructor() {}
+  cancellationId;
+  
+  constructor() {
+    this.cancellationId = setTimeout(()=>{},0);
+  }
 
   leftSideNavItems: ISideNavItem[] = [
     {
@@ -40,7 +43,8 @@ export class AppComponent {
     if (menu.type == NavigationType.LABEL) {
       this.isAutomatedScroll = true;
       this.onSmoothScroll(menu.id);
-      setTimeout(() => {
+      clearTimeout(this.cancellationId);
+      this.cancellationId = setTimeout(() => {
         this.isAutomatedScroll = false;
       }, 1000);
     } else {
