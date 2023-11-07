@@ -11,7 +11,7 @@ export class ExperienceComponent implements OnInit {
   companies = [
     'Experion Technologies',
     'IIM Indore',
-    'YellowBerry Technologies',
+    'Yelloberries Digital',
   ];
 
   selectedCompanyIndex = 0;
@@ -43,8 +43,8 @@ export class ExperienceComponent implements OnInit {
     {
       role: 'Faculty',
       connector: '@',
-      institutionName: 'YellowBerry Technologies',
-      institutionUrl: 'https://yellowberry.in/',
+      institutionName: 'Yelloberries Digital',
+      institutionUrl: 'http://www.yelloberries.digital/',
       workDuration: 'July 2019 - August 2019',
       responsibilities: [
         'Teaching android development along with git & GitHub being a student at the time.',
